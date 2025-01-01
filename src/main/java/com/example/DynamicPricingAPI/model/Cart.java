@@ -32,20 +32,23 @@ public class Cart {
     @Column(nullable = false)
     private LocalDateTime updatedDate;
 
+    //Constructors
+    public Cart(){}
+    public Cart(User user, String status){
+        this.user = user;
+        this.status = status;
+    }
+
+    //Custom methods
     @PrePersist
     protected void onCreate(){
         createdDate = LocalDateTime.now();
         updatedDate = LocalDateTime.now();
     }
+    //Getters and setters
     @PreUpdate
     protected void onUpdate(){
         updatedDate = LocalDateTime.now();
-    }
-
-    public Cart(){}
-    public Cart(User user, String status){
-        this.user = user;
-        this.status = status;
     }
 
     public String getStatus() {

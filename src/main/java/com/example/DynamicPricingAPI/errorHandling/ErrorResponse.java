@@ -1,4 +1,4 @@
-package com.example.DynamicPricingAPI.model;
+package com.example.DynamicPricingAPI.errorHandling;
 
 import java.time.LocalDateTime;
 
