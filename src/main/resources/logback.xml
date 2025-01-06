@@ -1,0 +1,32 @@
+<configuration>
+
+    <!-- Define the file appender -->
+    <appender name="FILE" class="ch.qos.logback.core.FileAppender">
+        <!-- Set the file path -->
+        <file>file.log</file>
+        <!-- Define the layout for log messages -->
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <!-- Include class name in the pattern -->
+            <Pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</Pattern>
+        </layout>
+    </appender>
+
+    <!-- Define the console appender -->
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <!-- Define the layout for console log messages -->
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <!-- Include class name in the pattern -->
+            <Pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</Pattern>
+        </layout>
+    </appender>
+
+    <!-- Define loggers -->
+    <logger name="uk.ac.hope.mcse.segh.application" level="DEBUG">
+        <appender-ref ref="FILE"/> <!-- Reference FILE appender -->
+    </logger>
+
+    <root level="INFO">
+        <appender-ref ref="CONSOLE"/>
+    </root>
+
+</configuration>
