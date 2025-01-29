@@ -1,14 +1,15 @@
 package com.example.DynamicPricingAPI.Service;
 
-import com.example.DynamicPricingAPI.model.Product;
+import com.example.DynamicPricingAPI.model.ProductDTO;
 
 import java.util.List;
 
 public interface ProductService {
-    Product createProduct(Product product);
-    Product getProductById(Long id); //test
-    List<Product> getAllProducts();
-    Product updateProduct(Long id, Product product);
+    ProductDTO createProduct(ProductDTO productDTO);
+    ProductDTO getProductById(Long id); //test
+    List<ProductDTO> getAllProducts();
+    ProductDTO updateProduct(Long id, ProductDTO productDTO);
     void deleteProduct(Long id);
-    List<Product> searchProductByName(String name);
+    List<ProductDTO> searchProductByName(String name);
+    List<ProductDTO> filterProducts(String category, Double minPrice, Double maxPrice);
 }

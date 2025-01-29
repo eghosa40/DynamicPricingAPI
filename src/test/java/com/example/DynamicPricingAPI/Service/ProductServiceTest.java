@@ -1,6 +1,7 @@
 package com.example.DynamicPricingAPI.Service;
 
 import com.example.DynamicPricingAPI.Repository.ProductRepository;
+import com.example.DynamicPricingAPI.Service.Implementation.ProductServiceImpl;
 import com.example.DynamicPricingAPI.model.Product;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

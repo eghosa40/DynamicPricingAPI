@@ -1,14 +1,15 @@
-package com.example.DynamicPricingAPI.Service;
+package com.example.DynamicPricingAPI.Service.Implementation;
 
 import com.example.DynamicPricingAPI.Repository.CartItemRepository;
 import com.example.DynamicPricingAPI.Repository.CartRepository;
+import com.example.DynamicPricingAPI.Service.CartService;
 import com.example.DynamicPricingAPI.model.Cart;
 import com.example.DynamicPricingAPI.model.CartItem;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 @Service
-public class CartServiceImpl implements CartService{
+public class CartServiceImpl implements CartService {
     //Construction injection
     private final CartRepository cartRepository;
     private final CartItemRepository cartItemRepository;

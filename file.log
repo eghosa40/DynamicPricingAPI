@@ -1,0 +1,68 @@
+2025-01-06 18:30:17.026 [main] INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.example.DynamicPricingAPI.DynamicPricingApiApplicationTests]: DynamicPricingApiApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2025-01-06 18:30:17.076 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.example.DynamicPricingAPI.DynamicPricingApiApplication for test class com.example.DynamicPricingAPI.DynamicPricingApiApplicationTests
+2025-01-06 18:30:17.224 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2025-01-06 18:30:17.234 [main] INFO  c.e.D.DynamicPricingApiApplicationTests - Starting DynamicPricingApiApplicationTests using Java 21.0.2 with PID 72665 (started by eghosa in /Users/eghosa/Programming/DynamicPricingAPI)
+2025-01-06 18:30:17.235 [main] INFO  c.e.D.DynamicPricingApiApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2025-01-06 18:30:17.558 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-06 18:30:17.582 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 21 ms. Found 5 JPA repository interfaces.
+2025-01-06 18:30:17.755 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-06 18:30:17.785 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.3.Final
+2025-01-06 18:30:17.800 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-01-06 18:30:17.929 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-06 18:30:17.942 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-01-06 18:30:18.025 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2025-01-06 18:30:18.025 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-01-06 18:30:18.038 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-01-06 18:30:18.432 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-01-06 18:30:18.433 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-06 18:30:18.617 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-01-06 18:30:18.773 [main] INFO  c.e.D.DynamicPricingApiApplicationTests - Started DynamicPricingApiApplicationTests in 1.634 seconds (process running for 2.136)
+2025-01-06 18:30:19.203 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-01-06 18:30:19.205 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-01-06 18:30:19.206 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-01-06 18:34:09.934 [main] INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.example.DynamicPricingAPI.DynamicPricingApiApplicationTests]: DynamicPricingApiApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2025-01-06 18:34:09.976 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.example.DynamicPricingAPI.DynamicPricingApiApplication for test class com.example.DynamicPricingAPI.DynamicPricingApiApplicationTests
+2025-01-06 18:34:10.155 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2025-01-06 18:34:10.162 [main] INFO  c.e.D.DynamicPricingApiApplicationTests - Starting DynamicPricingApiApplicationTests using Java 21.0.2 with PID 72814 (started by eghosa in /Users/eghosa/Programming/DynamicPricingAPI)
+2025-01-06 18:34:10.163 [main] INFO  c.e.D.DynamicPricingApiApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2025-01-06 18:34:10.424 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-06 18:34:10.460 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 31 ms. Found 5 JPA repository interfaces.
+2025-01-06 18:34:10.643 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-06 18:34:10.671 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.3.Final
+2025-01-06 18:34:10.685 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-01-06 18:34:10.822 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-06 18:34:10.834 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-01-06 18:34:10.911 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2025-01-06 18:34:10.912 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-01-06 18:34:10.927 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-01-06 18:34:11.328 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-01-06 18:34:11.329 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-06 18:34:11.525 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-01-06 18:34:11.681 [main] INFO  c.e.D.DynamicPricingApiApplicationTests - Started DynamicPricingApiApplicationTests in 1.639 seconds (process running for 2.087)
+2025-01-06 18:34:11.682 [main] INFO  c.e.D.Controller.LogTestRunner - INFO log from LogTestRunner.
+2025-01-06 18:34:11.683 [main] ERROR c.e.D.Controller.LogTestRunner - ERROR log from LogTestRunner.
+2025-01-06 18:34:12.131 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-01-06 18:34:12.132 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-01-06 18:34:12.133 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-01-06 18:44:17.897 [main] INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.example.DynamicPricingAPI.DynamicPricingApiApplicationTests]: DynamicPricingApiApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2025-01-06 18:44:17.939 [main] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.example.DynamicPricingAPI.DynamicPricingApiApplication for test class com.example.DynamicPricingAPI.DynamicPricingApiApplicationTests
+2025-01-06 18:44:18.131 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2025-01-06 18:44:18.142 [main] INFO  c.e.D.DynamicPricingApiApplicationTests - Starting DynamicPricingApiApplicationTests using Java 21.0.2 with PID 73149 (started by eghosa in /Users/eghosa/Programming/DynamicPricingAPI)
+2025-01-06 18:44:18.142 [main] INFO  c.e.D.DynamicPricingApiApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2025-01-06 18:44:18.406 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-06 18:44:18.438 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 27 ms. Found 5 JPA repository interfaces.
+2025-01-06 18:44:18.611 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-06 18:44:18.640 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.3.Final
+2025-01-06 18:44:18.654 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-01-06 18:44:18.785 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-06 18:44:18.800 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-01-06 18:44:18.882 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2025-01-06 18:44:18.883 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-01-06 18:44:18.897 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-01-06 18:44:19.288 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-01-06 18:44:19.289 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-06 18:44:19.486 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-01-06 18:44:19.659 [main] INFO  c.e.D.DynamicPricingApiApplicationTests - Started DynamicPricingApiApplicationTests in 1.659 seconds (process running for 2.105)
+2025-01-06 18:44:20.177 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-01-06 18:44:20.179 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-01-06 18:44:20.181 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.

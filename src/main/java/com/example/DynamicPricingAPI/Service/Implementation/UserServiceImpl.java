@@ -1,6 +1,7 @@
-package com.example.DynamicPricingAPI.Service;
+package com.example.DynamicPricingAPI.Service.Implementation;
 
 import com.example.DynamicPricingAPI.Repository.UserRepository;
+import com.example.DynamicPricingAPI.Service.UserService;
 import com.example.DynamicPricingAPI.model.User;
 import org.springframework.stereotype.Service;
 

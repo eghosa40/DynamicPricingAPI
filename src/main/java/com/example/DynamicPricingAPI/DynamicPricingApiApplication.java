@@ -8,6 +8,6 @@ public class DynamicPricingApiApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(DynamicPricingApiApplication.class, args);
+	// Add additional logic here if needed
 	}
-
 }
