@@ -11,4 +11,3 @@ public class DynamicPricingApiApplication {
 	// Add additional logic here if needed
 	}
 }
-test
