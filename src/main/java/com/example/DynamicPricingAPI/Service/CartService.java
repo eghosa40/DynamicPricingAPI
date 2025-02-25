@@ -16,4 +16,10 @@ public interface CartService {
     double calculateCartTotal(Long cartId);
 
     void deleteCart(Long id);
+
+    CartItem addCartItem(Long cartId, CartItem cartItem);
+
+    void removeCartItem(Long cartId, Long itemId);
+
+
 }

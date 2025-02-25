@@ -1,8 +1,11 @@
 package com.example.DynamicPricingAPI.Service.Implementation;
 
 
+import com.example.DynamicPricingAPI.Repository.CategoryRepository;
 import com.example.DynamicPricingAPI.Repository.ProductRepository;
+import com.example.DynamicPricingAPI.Service.CategoryService;
 import com.example.DynamicPricingAPI.Service.ProductService;
+import com.example.DynamicPricingAPI.model.Category;
 import com.example.DynamicPricingAPI.model.Product;
 import com.example.DynamicPricingAPI.model.ProductDTO;
 import org.springframework.stereotype.Service;
@@ -14,9 +17,11 @@ import java.util.stream.Collectors;
 public class ProductServiceImpl implements ProductService {
 
     private final ProductRepository productRepository;
+    private final CategoryService categoryService;
 
-    public ProductServiceImpl(ProductRepository productRepository) {
+    public ProductServiceImpl(ProductRepository productRepository, CategoryService categoryService) {
         this.productRepository = productRepository;
+        this.categoryService = categoryService;
     }
 
     // Convert Product to ProductDTO
@@ -45,7 +50,11 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public ProductDTO createProduct(ProductDTO productDTO) {
+
+        Category category = categoryService.findByName(productDTO.getCategoryName()).orElseThrow(() -> new IllegalArgumentException("Category not found: " + productDTO.getCategoryName()));
         Product product = toEntity(productDTO); // Convert DTO to entity
+        product.setCategory(category);
+
         Product savedProduct = productRepository.save(product); // Save entity
         return toDTO(savedProduct); // Convert saved entity back to DTO
     }

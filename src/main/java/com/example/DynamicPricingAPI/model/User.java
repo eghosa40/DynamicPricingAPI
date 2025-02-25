@@ -3,6 +3,7 @@ package com.example.DynamicPricingAPI.model;
 import jakarta.persistence.*;
 
 @Entity
+@Table(name = "\"user\"") //Use double quotes for H2 and backticks for MySQL
 public class User {
 
     @Id

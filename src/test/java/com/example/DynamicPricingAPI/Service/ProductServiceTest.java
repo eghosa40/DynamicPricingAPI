@@ -3,6 +3,7 @@ package com.example.DynamicPricingAPI.Service;
 import com.example.DynamicPricingAPI.Repository.ProductRepository;
 import com.example.DynamicPricingAPI.Service.Implementation.ProductServiceImpl;
 import com.example.DynamicPricingAPI.model.Product;
+import com.example.DynamicPricingAPI.model.ProductDTO;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -31,7 +32,7 @@ class ProductServiceTest {
         when(productRepository.findById(productId)).thenReturn(Optional.of(mockProduct));
 
         // Act
-        Product result = productService.getProductById(productId);
+        ProductDTO result = productService.getProductById(productId);
 
         // Assert
         assertNotNull(result); // Ensure result is not null
