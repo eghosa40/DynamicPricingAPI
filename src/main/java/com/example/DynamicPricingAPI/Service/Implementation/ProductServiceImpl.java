@@ -50,13 +50,27 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public ProductDTO createProduct(ProductDTO productDTO) {
+        // Debug: Print the incoming DTO
+        System.out.println("[DEBUG] Incoming ProductDTO: " + productDTO);
 
-        Category category = categoryService.findByName(productDTO.getCategoryName()).orElseThrow(() -> new IllegalArgumentException("Category not found: " + productDTO.getCategoryName()));
-        Product product = toEntity(productDTO); // Convert DTO to entity
-        product.setCategory(category);
+        Product product = toEntity(productDTO);
 
-        Product savedProduct = productRepository.save(product); // Save entity
-        return toDTO(savedProduct); // Convert saved entity back to DTO
+        // Handle categoryName
+        String categoryName = productDTO.getCategoryName();
+        System.out.println("[DEBUG] CategoryName: " + categoryName);
+
+        if (categoryName != null && !categoryName.trim().isEmpty()) {
+            System.out.println("[DEBUG] Searching for category: " + categoryName);
+            Category category = categoryService.findByName(categoryName)
+                    .orElseThrow(() -> new IllegalArgumentException("Category not found: " + categoryName));
+            product.setCategory(category);
+        } else {
+            System.out.println("[DEBUG] No category provided.");
+            product.setCategory(null); // Explicitly set to null
+        }
+
+        Product savedProduct = productRepository.save(product);
+        return toDTO(savedProduct);
     }
 
     @Override

@@ -10,14 +10,6 @@ public class ProductDTO {
 
     public ProductDTO() {}
 
-    public ProductDTO(String categoryName, Integer stock, Double price, String description, String name, Long id) {
-        this.categoryName = categoryName;
-        this.stock = stock;
-        this.price = price;
-        this.description = description;
-        this.name = name;
-        this.id = id;
-    }
 
     public Long getId() {
         return id;

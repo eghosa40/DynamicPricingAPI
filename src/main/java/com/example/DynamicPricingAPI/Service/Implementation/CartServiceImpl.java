@@ -26,13 +26,10 @@ public class CartServiceImpl implements CartService {
     }
     @Override
     public Cart createCart(Cart cart) {
-        if (cart.getUser() == null) {
-            throw new IllegalArgumentException("Cart must be associated with a user.");
-        }
-
-        // Initialize cart fields
+        // Remove the user validation
         cart.setStatus("ACTIVE");
-        return cartRepository.save(cart);    }
+        return cartRepository.save(cart);
+    }
 
     @Override
     public Cart getCartId(Long id) {
