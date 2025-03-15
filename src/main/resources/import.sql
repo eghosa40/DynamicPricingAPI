@@ -1,0 +1,47 @@
+CREATE DATABASE IF NOT EXISTS dynamicAPI;
+USE dynamicAPI;
+
+CREATE TABLE User (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    email VARCHAR(255) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL,
+    name VARCHAR(100) NOT NULL,
+    phoneNumber VARCHAR(20),
+    address VARCHAR(255)
+);
+
+CREATE TABLE Category (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(50) NOT NULL UNIQUE,
+    description VARCHAR(200)
+);
+
+CREATE TABLE Product (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    description VARCHAR(500),
+    basePrice DECIMAL(10,2) NOT NULL CHECK (basePrice >= 0),
+    stock INT NOT NULL CHECK (stock >= 0),
+    category_id BIGINT NOT NULL,
+    imageUrl VARCHAR(255),
+    FOREIGN KEY (category_id) REFERENCES Category(id) ON DELETE CASCADE
+);
+
+CREATE TABLE Cart (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    user_id BIGINT, -- Nullable to allow guest carts
+    status ENUM('ACTIVE', 'COMPLETED', 'CANCELLED') NOT NULL DEFAULT 'ACTIVE',
+    createdDate TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updatedDate TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES User(id) ON DELETE SET NULL
+);
+
+CREATE TABLE CartItem (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    cart_id BIGINT NOT NULL,
+    product_id BIGINT NOT NULL,
+    quantity INT NOT NULL CHECK (quantity > 0),
+    calculatedPrice DECIMAL(10,2) NOT NULL CHECK (calculatedPrice >= 0),
+    FOREIGN KEY (cart_id) REFERENCES Cart(id) ON DELETE CASCADE,
+    FOREIGN KEY (product_id) REFERENCES Product(id) ON DELETE CASCADE
+);
