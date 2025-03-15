@@ -9,4 +9,5 @@ public interface CategoryService {
     Category createCategory(String name, String description);
     Optional<Category> findByName(String name);
     List<Category> getAllCategories();
+    Optional<Category> findById(Long id);
 }

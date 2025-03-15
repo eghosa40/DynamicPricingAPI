@@ -18,7 +18,6 @@ public class CartServiceImpl implements CartService {
     private final CartItemRepository cartItemRepository;
     private final ProductRepository productRepository;
 
-
     public CartServiceImpl(CartRepository cartRepository, CartItemRepository cartItemRepository, ProductRepository productRepository) {
         this.cartItemRepository = cartItemRepository;
         this.cartRepository = cartRepository;
@@ -111,7 +110,6 @@ public class CartServiceImpl implements CartService {
         return cartItemRepository.save(cartItem);
     }
 
-    // ✅ New Method: Remove Item from Cart
     @Override
     @Transactional
     public void removeCartItem(Long cartId, Long itemId) {

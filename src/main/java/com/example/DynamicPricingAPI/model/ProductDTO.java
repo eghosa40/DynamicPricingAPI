@@ -4,12 +4,20 @@ public class ProductDTO {
     private Long id;
     private String name;
     private String description;
-    private Double price;
+    private Double basePrice;
     private Integer stock;
-    private String categoryName;
+    private Long categoryId;
+    private String imageUrl;
 
     public ProductDTO() {}
 
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
 
     public Long getId() {
         return id;
@@ -19,12 +27,12 @@ public class ProductDTO {
         this.id = id;
     }
 
-    public String getCategoryName() {
-        return categoryName;
+    public Long getCategoryId() {
+        return categoryId;
     }
 
-    public void setCategoryName(String categoryName) {
-        this.categoryName = categoryName;
+    public void setCategoryId(Long categoryId) {
+        this.categoryId = categoryId;
     }
 
     public Integer getStock() {
@@ -35,12 +43,12 @@ public class ProductDTO {
         this.stock = stock;
     }
 
-    public Double getPrice() {
-        return price;
+    public Double getBasePrice() {
+        return basePrice;
     }
 
-    public void setPrice(Double price) {
-        this.price = price;
+    public void setBasePrice(Double basePrice) {
+        this.basePrice = basePrice;
     }
 
     public String getDescription() {

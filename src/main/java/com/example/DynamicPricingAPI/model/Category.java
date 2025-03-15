@@ -1,6 +1,7 @@
 package com.example.DynamicPricingAPI.model;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
 
 @Entity
 public class Category {
@@ -9,6 +10,7 @@ public class Category {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @NotBlank(message = "Category name is required")
     @Column(nullable = false, unique = true, length = 50)
     private String name;
 

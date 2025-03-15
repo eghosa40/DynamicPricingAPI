@@ -1,7 +1,5 @@
 package com.example.DynamicPricingAPI.Service.Implementation;
 
-
-import com.example.DynamicPricingAPI.Repository.CategoryRepository;
 import com.example.DynamicPricingAPI.Repository.ProductRepository;
 import com.example.DynamicPricingAPI.Service.CategoryService;
 import com.example.DynamicPricingAPI.Service.ProductService;
@@ -30,9 +28,10 @@ public class ProductServiceImpl implements ProductService {
         dto.setId(product.getId());
         dto.setName(product.getName());
         dto.setDescription(product.getDescription());
-        dto.setPrice(product.getBasePrice());
+        dto.setBasePrice(product.getBasePrice());
         dto.setStock(product.getStock());
-        dto.setCategoryName(product.getCategory() != null ? product.getCategory().getName() : null);
+        dto.setCategoryId(product.getCategory() != null ? product.getCategory().getId() : null); // ✅ Store category as ID
+        dto.setImageUrl(product.getImageUrl());
         return dto;
     }
 
@@ -42,39 +41,34 @@ public class ProductServiceImpl implements ProductService {
         product.setId(dto.getId());
         product.setName(dto.getName());
         product.setDescription(dto.getDescription());
-        product.setBasePrice(dto.getPrice());
+        product.setBasePrice(dto.getBasePrice());
         product.setStock(dto.getStock());
-        // Note: Handle setting Category entity if needed.
+        product.setImageUrl(dto.getImageUrl());
+
+        // ✅ Set category if provided
+        if (dto.getCategoryId() != null) {
+            Category category = categoryService.findById(dto.getCategoryId())
+                    .orElseThrow(() -> new IllegalArgumentException("Category not found for ID: " + dto.getCategoryId()));
+            product.setCategory(category);
+        }
         return product;
     }
 
     @Override
     public ProductDTO createProduct(ProductDTO productDTO) {
-        // Debug: Print the incoming DTO
-        System.out.println("[DEBUG] Incoming ProductDTO: " + productDTO);
+        System.out.println("[DEBUG] Creating Product: " + productDTO);
 
         Product product = toEntity(productDTO);
-
-        // Handle categoryName
-        String categoryName = productDTO.getCategoryName();
-        System.out.println("[DEBUG] CategoryName: " + categoryName);
-
-        if (categoryName != null && !categoryName.trim().isEmpty()) {
-            System.out.println("[DEBUG] Searching for category: " + categoryName);
-            Category category = categoryService.findByName(categoryName)
-                    .orElseThrow(() -> new IllegalArgumentException("Category not found: " + categoryName));
-            product.setCategory(category);
-        } else {
-            System.out.println("[DEBUG] No category provided.");
-            product.setCategory(null); // Explicitly set to null
-        }
-
         Product savedProduct = productRepository.save(product);
+
+        System.out.println("[DEBUG] Product Created: " + savedProduct);
         return toDTO(savedProduct);
     }
 
     @Override
     public ProductDTO updateProduct(Long id, ProductDTO productDTO) {
+        System.out.println("[DEBUG] Updating Product ID: " + id);
+
         // Fetch the existing product
         Product existingProduct = productRepository.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("Product not found with ID: " + id));
@@ -82,9 +76,16 @@ public class ProductServiceImpl implements ProductService {
         // Update fields
         existingProduct.setName(productDTO.getName());
         existingProduct.setDescription(productDTO.getDescription());
-        existingProduct.setBasePrice(productDTO.getPrice());
+        existingProduct.setBasePrice(productDTO.getBasePrice());
         existingProduct.setStock(productDTO.getStock());
-        // Update category if necessary
+        existingProduct.setImageUrl(productDTO.getImageUrl());
+
+        // ✅ Update category if necessary
+        if (productDTO.getCategoryId() != null) {
+            Category category = categoryService.findById(productDTO.getCategoryId())
+                    .orElseThrow(() -> new IllegalArgumentException("Category not found for ID: " + productDTO.getCategoryId()));
+            existingProduct.setCategory(category);
+        }
 
         Product updatedProduct = productRepository.save(existingProduct);
         return toDTO(updatedProduct);
@@ -132,4 +133,5 @@ public class ProductServiceImpl implements ProductService {
                 .collect(Collectors.toList());
     }
 }
+
 

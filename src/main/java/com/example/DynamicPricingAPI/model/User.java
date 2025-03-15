@@ -2,8 +2,10 @@ package com.example.DynamicPricingAPI.model;
 
 import jakarta.persistence.*;
 
+import javax.management.relation.Role;
+
 @Entity
-@Table(name = "\"user\"") //Use double quotes for H2 and backticks for MySQL
+@Table(name = "user") //Use double quotes for H2 and backticks for MySQL
 public class User {
 
     @Id
@@ -19,13 +21,26 @@ public class User {
     @Column(nullable = false, length = 100)
     private String name;
 
-
     private String phoneNumber;
-
-
     private String address;
 
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    private Role role;
+
+    public enum Role {
+        ADMIN, USER
+    }
+
     public User() {
+    }
+
+    public Role getRole() {
+        return role;
+    }
+
+    public void setRole(Role role) {
+        this.role = role;
     }
 
     public User(Long id, String email, String password, String name, String phoneNumber, String address) {
@@ -35,6 +50,7 @@ public class User {
         this.phoneNumber = phoneNumber;
         this.password = password;
         this.name = name;
+        this.role = Role.USER;
     }
 
     public String getAddress() {

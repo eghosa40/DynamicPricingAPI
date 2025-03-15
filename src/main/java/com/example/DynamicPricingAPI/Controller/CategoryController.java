@@ -3,6 +3,7 @@ import com.example.DynamicPricingAPI.model.Category;
 import com.example.DynamicPricingAPI.Service.CategoryService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import jakarta.validation.Valid;
 
 import java.util.List;
 
@@ -16,9 +17,9 @@ public class CategoryController {
     }
 
     @PostMapping
-    public ResponseEntity<Category> createCategory(@RequestParam String name, @RequestParam String description) {
-        Category category = categoryService.createCategory(name, description);
-        return ResponseEntity.ok(category);
+    public ResponseEntity<Category> createCategory(@Valid @RequestBody Category category) {
+        Category createdCategory = categoryService.createCategory(category.getName(), category.getDescription());
+        return ResponseEntity.ok(createdCategory);
     }
 
     @GetMapping
